@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test suite" parallel="classes" thread-count="2">
+    <test name="Login Demo">
+
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="url" value="http://demo.t3-framework.org/joomla30/index.php/en/joomla-pages/sample-page-2/login-page"/>
+
+        <classes>
+
+            <class name="ScrollTS.FormTC">
+
+            </class>
+
+        </classes>
+    </test>
+</suite>

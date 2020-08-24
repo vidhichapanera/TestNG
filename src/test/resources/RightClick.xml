@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test suite" parallel="classes" thread-count="2">
+    <test name="Login Demo">
+
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="url" value="https://swisnl.github.io/jQuery-contextMenu/demo.html"/>
+
+        <classes>
+
+            <class name="RightClickTS.RightClickTC">
+                <!--<methods>
+                    <include name="loginSuccessfully"></include>
+                </methods>-->
+            </class>
+
+        </classes>
+    </test>
+</suite>

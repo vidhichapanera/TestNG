@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test suite" parallel="methods" thread-count="3">
+    <test name="Login Demo">
+
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="url" value="http://www.demoqa.com/upload-download"/>
+
+        <classes>
+
+            <class name="FileUploadTS.fileUploasTC">
+
+            </class>
+
+        </classes>
+    </test>
+</suite>

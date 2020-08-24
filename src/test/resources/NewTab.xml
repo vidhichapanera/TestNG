@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test suite" parallel="methods" thread-count="1">
+    <test name="Login Demo">
+
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="url" value="https://www.encodedna.com/javascript/demo/open-new-window-using-javascript-method.htm"/>
+
+        <classes>
+
+            <class name="NewTabTS.NewTabTC">
+
+            </class>
+
+        </classes>
+    </test>
+</suite>
