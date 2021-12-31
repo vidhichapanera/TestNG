@@ -1,5 +1,8 @@
 package Alert;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +25,11 @@ public class storeAllPageLocator {
 
     public WebDriver driver;
 
+    private static final Logger log4j = LogManager.getLogger(storeAllPageLocator.class);
+
+    {
+        BasicConfigurator.configure();
+    }
 
     public storeAllPageLocator() {
     }
@@ -61,7 +69,7 @@ public class storeAllPageLocator {
                 xpath += (i++)+" : "+  "//input[@id="+ "'" +ty.getAttribute("id")+ "'" + "]" +"\n";
             }
         }
-        System.out.println(xpath);
+        log4j.info(xpath);
 
        /* FileWriter fw = new FileWriter("test.txt");
         fw.write(xpath);
