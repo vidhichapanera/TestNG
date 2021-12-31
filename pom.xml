@@ -64,7 +64,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>target/test-classes/${TestRunner}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <groups>${TestGroup}</groups>
                 </configuration>
             </plugin>
         </plugins>

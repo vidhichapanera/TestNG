@@ -7,7 +7,7 @@
 
         <classes>
 
-            <class name="AlertTS.AlertTC">
+            <class name="Alert.storeAllPageLocator">
             </class>
 
         </classes>

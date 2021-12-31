@@ -22,6 +22,7 @@ public class storeAllPageLocator {
 
     public WebDriver driver;
 
+
     public storeAllPageLocator() {
     }
 
@@ -31,32 +32,41 @@ public class storeAllPageLocator {
      * @throws IOException
      */
     @Test
-    public void test1() throws IOException {
+    public void test1() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         this.driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("https://www.seleniumeasy.com/selenium-tutorials/scrolling-web-page-with-selenium-webdriver-using-java");
+        driver.get("https://hikevidhi_4103.hikeup.com/admin#!/general");
 
-       File file = new File("test.txt");
-       file.createNewFile();
+        Thread.sleep(3000);
+
+        driver.findElement(By.name("usernameOrEmailAddress")).sendKeys("vidhi@hikeup.com");
+        driver.findElement(By.name("password")).sendKeys("#Test4196");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[normalize-space(.)='Log in']")).click();
+        Thread.sleep(20000);
+
+        /*File file = new File("test.txt");
+        file.createNewFile();*/
 
         List<WebElement> list = new WebDriverWait(driver,90)
-               .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("div")));
-       int i =1;
-       String xpath = "";
-       for (WebElement ty : list) {
-           if (!ty.getAttribute("class").equals("")) {
+               .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("input")));
+        int i =1;
+        String xpath = "";
+        for (WebElement ty : list) {
+           if (!ty.getAttribute("id").equals("")) {
                 //System.out.println(i++ + " :" + ty.getAttribute("id"));
-                xpath += (i++)+" : "+  "//div[@class="+ "'" +ty.getAttribute("class")+ "'" + "]" +"\n";
+                xpath += (i++)+" : "+  "//input[@id="+ "'" +ty.getAttribute("id")+ "'" + "]" +"\n";
             }
         }
+        System.out.println(xpath);
 
-        FileWriter fw = new FileWriter("test.txt");
+       /* FileWriter fw = new FileWriter("test.txt");
         fw.write(xpath);
-        fw.close();
-       driver.quit();
+        fw.close();*/
+        driver.quit();
 
 
 
